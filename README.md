@@ -53,7 +53,7 @@ NEXT_PUBLIC_PASSENTRY_API_URL=https://api.passentry.com/v1
 # Moca Network
 NEXT_PUBLIC_MOCA_CHAIN_ID=5151
 NEXT_PUBLIC_MOCA_RPC_URL=https://testnet-rpc.mechain.tech
-NEXT_PUBLIC_AIR_SHOP_URL=https://shop.air3.com
+NEXT_PUBLIC_AIR_SHOP_URL=https://air.shop
 ```
 
 4. Run the development server:

@@ -63,7 +63,7 @@ export default function DashboardPage() {
       title: 'AIR Shop',
       description: 'Browse exclusive member products',
       icon: <ShoppingBag className="w-6 h-6" />,
-      href: process.env.NEXT_PUBLIC_AIR_SHOP_URL || 'https://shop.air3.com',
+      href: process.env.NEXT_PUBLIC_AIR_SHOP_URL || 'https://air.shop',
       external: true,
     },
     {
@@ -79,7 +79,7 @@ export default function DashboardPage() {
       title: 'Explore Perks',
       description: 'Discover available benefits',
       icon: <Gift className="w-6 h-6" />,
-      href: `${process.env.NEXT_PUBLIC_AIR_SHOP_URL || 'https://shop.air3.com'}/perks`,
+      href: `${process.env.NEXT_PUBLIC_AIR_SHOP_URL || 'https://air.shop'}/perks`,
       external: true,
     },
   ];

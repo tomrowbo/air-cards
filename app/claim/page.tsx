@@ -324,7 +324,7 @@ export default function ClaimPage() {
                       className="flex-1"
                     >
                       <a
-                        href={process.env.NEXT_PUBLIC_AIR_SHOP_URL || 'https://shop.air3.com'}
+                        href={process.env.NEXT_PUBLIC_AIR_SHOP_URL || 'https://air.shop'}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
