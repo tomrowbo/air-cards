@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AIR Cards
+
+A Next.js application for claiming and managing AIR digital membership cards with NFC capabilities, built on MOCA Chain using AIR Kit and PassEntry.
+
+## Features
+
+- **AIR Credentials Authentication**: Secure login using AIR Kit for wallet-based authentication
+- **Digital Membership Cards**: NFC-enabled passes that work with Apple Wallet and Google Wallet
+- **Cloud-themed UI**: Modern fintech design with atmospheric gradients and animations
+- **PassEntry Integration**: Secure pass creation and management
+- **MOCA Chain Support**: Built for the MOCA Chain testnet ecosystem
+
+## Technology Stack
+
+- **Frontend**: Next.js 15 with TypeScript
+- **Styling**: Tailwind CSS with custom glass morphism effects
+- **Animations**: Framer Motion for smooth transitions
+- **Authentication**: AIR Kit (@mocanetwork/airkit)
+- **Pass Management**: PassEntry API
+- **Icons**: Lucide React
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+1. Partner ID from [AIR Kit Developer Dashboard](https://developers.sandbox.air3.com/)
+2. PassEntry API credentials
+3. Node.js 18+ and npm
+
+### Installation
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Copy environment variables:
+```bash
+cp .env.example .env.local
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Update `.env.local` with your credentials:
+```env
+# AIR Kit Configuration
+NEXT_PUBLIC_PARTNER_ID=your_partner_id_here
+NEXT_PUBLIC_AIR_ENV=sandbox
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# PassEntry Configuration
+NEXT_PUBLIC_PASSENTRY_API_KEY=your_passentry_api_key_here
+NEXT_PUBLIC_PASSENTRY_TEMPLATE_ID=your_pass_template_id_here
+NEXT_PUBLIC_PASSENTRY_API_URL=https://api.passentry.com/v1
 
-## Learn More
+# Moca Network
+NEXT_PUBLIC_MOCA_CHAIN_ID=5151
+NEXT_PUBLIC_MOCA_RPC_URL=https://testnet-rpc.mechain.tech
+NEXT_PUBLIC_AIR_SHOP_URL=https://shop.air3.com
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the development server:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment to Vercel
 
-## Deploy on Vercel
+1. Push your code to a Git repository
+2. Connect your repository to Vercel
+3. Add the environment variables from `.env.example` to your Vercel project settings
+4. Deploy!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application is ready for production deployment with optimized builds and static generation.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Key Features
+
+### Authentication Flow
+1. Users connect with AIR Credentials on the landing page
+2. Authentication is handled through the AIR Kit SDK
+3. Session management with automatic redirect on login/logout
+
+### Card Claiming Process
+1. Authenticated users can claim their AIR Card
+2. PassEntry API creates an NFC-enabled digital pass
+3. Users can add the pass to their digital wallet
+4. External ID uses wallet address or email for uniqueness
+
+### Benefits & Perks
+- Exclusive discounts at AIR Shop
+- NFC tap-to-redeem functionality
+- Community event access
+- Early access to new features
+
+## Environment Configuration
+
+Copy `.env.example` to `.env.local` and configure with your API keys and settings before deploying to Vercel.
